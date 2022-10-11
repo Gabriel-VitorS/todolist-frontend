@@ -5,6 +5,7 @@ import Cadastrar from './pages/Cadastrar/Cadastrar';
 import ProtectRoute from './components/ProtectRoute/ProtectRoute';
 import Listas from './pages/Listas/Listas';
 import './App.css';
+import Lista from './pages/Lista/Lista';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
 
           <Route element={<ProtectRoute />}>
             <Route path='/listas' element={<Listas/>} />
+            <Route path='/lista/:id' element={<Lista />} />
           </Route>
           
 

@@ -4,6 +4,10 @@
     margin-bottom: 15px;
 }
 
+.invalid{
+    border-bottom: 1px solid rgb(245, 64, 64);
+}
+
 .divInput label {
     margin-bottom: 5px;
 }

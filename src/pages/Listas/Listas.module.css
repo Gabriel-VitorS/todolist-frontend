@@ -1,0 +1,15 @@
+.listas{
+    display: flex;
+    place-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.listas div {
+    margin: 10px;
+}
+
+/* @media (max-width: 425px) {
+    .listas{
+        justify-content: space-evenly;
+    }
+} */

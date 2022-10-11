@@ -1,9 +1,9 @@
 import style from './Button.module.css'
-function Button({text, handle, buttonStyle}){
+function Button({text, handle, buttonStyle, type = 'submit'}){
 
     return (
         <div className={style.divButton}>
-            <button className={`${style[buttonStyle]}`} onClick={handle}>{text}</button>
+            <button type={type} className={`${style[buttonStyle]}`} onClick={handle}>{text}</button>
         </div>
         
     ) 
