@@ -20,5 +20,19 @@
 .trashButton{
     color: #FF4D4D;
     cursor: pointer;
-    /* margin-right: 20px; */
+}
+
+.editButton{
+    margin-right: 20px;
+}
+.editButton svg{
+    width: 35px;
+    height: 35px;
+    color: var(--primary-color);
+    cursor: pointer;
+}
+
+.titleButtons{
+    display: flex;
+    justify-content: space-around;
 }

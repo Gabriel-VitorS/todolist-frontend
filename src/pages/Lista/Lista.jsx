@@ -9,7 +9,7 @@ function Lista(){
     const {id} = useParams()
     const [modal, setModal] = useState('')
     const [task, setTask] = useState([])
-
+    const [title, setTitle] = useState(localStorage.title)
     const modeTask ={
         id: '',
         task: '',
@@ -17,7 +17,6 @@ function Lista(){
         id_title: id
     }
 
-    const title = localStorage.title
 
     useEffect(()=>{
         setModal('show')
@@ -30,35 +29,56 @@ function Lista(){
         })
         .then( resp => resp.json().then(data => ({status: resp.status, body: data})))
         .then( (data) =>{
-            // console.log(data)
             setModal()
             if(data.status === 200){
-                // let dados = Array()
                 let dados = data.body.Data
                 dados.push(modeTask)
-                // dados.push(data.body.Data)
                 setTask(data.body.Data)
-                // setTask(task => [...task, 'adad'])
-                
-                // console.log(dados)
             }                
-            
-            
+      
         })
         .catch( 
             err => {
             setModal()
-            // setAlert({type: 'error', message : 'Erro no servidor'})
-            // console.error(err)
+
             
         })
+
     },[id])
+
+    function atualizaTitle(e){
+        e.preventDefault()
+        setModal('show')
+        fetch(`${process.env.REACT_APP_API_URL}titles/${id}`,{
+            method:'PUT',
+            body: JSON.stringify({
+                title:e.target.title.value,
+            }),
+            headers:{
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${sessionStorage.token}`
+            } 
+        })
+        .then( resp => resp.json().then(data => ({status: resp.status, body: data})))
+        .then( (data) =>{ 
+            setModal()
+            document.getElementById('updateTitle').querySelectorAll('button')[0].click()
+            if(data.status === 200){
+                setTitle(e.target.title.value)
+            }
+        })
+        .catch( 
+            err => {
+            setModal()
+        })
+
+    }
 
     async function insertTask(e){
         if(e.keyCode === 13){
             let dados = task.concat(modeTask)
             await setTask(dados)
-            const input = document.querySelector('form').lastChild
+            const input = document.querySelectorAll('form')[1].lastChild
             input.querySelectorAll('input')[1].focus()
         }
         
@@ -101,7 +121,9 @@ function Lista(){
     return (
         <>
             <HeaderTasks
-            id={id}/>
+            id={id}
+            atualizaTitle={atualizaTitle}
+            />
             
             <div>
                 <h1>{title}</h1>

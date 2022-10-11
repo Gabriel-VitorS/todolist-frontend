@@ -33,7 +33,6 @@ function ButtonAddTitle({showButton}){
                 localStorage.setItem('title', e.target.title.value)
                 navegate(`/lista/${data.body.id}`)
             }
-            console.log(data)
         })
         .catch(err => {
             setLoader()
