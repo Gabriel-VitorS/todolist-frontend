@@ -1,0 +1,35 @@
+.lista{
+    display: flex;
+}
+
+.checkbox{
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+.checkbox input{   
+    width: 25px;
+    height: 25px;
+    border: 1px solid var(--primary-color);
+    border-radius: 50%;
+    -webkit-appearance: none;
+}
+
+.checkbox input:checked{
+    background-color: var(--primary-color);
+}
+
+.inputTask{
+    border: 0;
+    border-bottom: 1px solid rgb(212, 212, 212);
+    outline: none;
+    margin-right: 20px;
+}
+
+.btnTrash{
+    color: #FF4D4D;    
+}
+
+.displayNone{
+    visibility: hidden;
+}

@@ -1,0 +1,38 @@
+.HeaderTasks{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.buttons{
+    display: flex;
+}
+
+.HeaderTasks svg {
+    width: 40px;
+    height: 40px;
+}
+
+.returnButton, .checkButton{
+    color: var(--primary-color);
+}
+
+.trashButton{
+    color: #FF4D4D;
+    cursor: pointer;
+}
+
+.editButton{
+    margin-right: 20px;
+}
+.editButton svg{
+    width: 35px;
+    height: 35px;
+    color: var(--primary-color);
+    cursor: pointer;
+}
+
+.titleButtons{
+    display: flex;
+    justify-content: space-around;
+}

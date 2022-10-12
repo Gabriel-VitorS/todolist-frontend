@@ -1,0 +1,22 @@
+.addTitle{
+    position: fixed;
+    bottom: 38px;
+    right: 22px;
+    display: none;
+    cursor: pointer;
+}
+
+.show{
+    display: block;
+}
+
+.addTitle svg{
+    width: 56px;
+    height: 56px;
+    color: var(--primary-color);
+}
+
+.titleButtons{
+    display: flex;
+    justify-content: space-around;
+}

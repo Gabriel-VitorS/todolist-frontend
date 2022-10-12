@@ -1,0 +1,50 @@
+.alert{
+    min-width: 200px;
+    max-width: 500px;
+    position: fixed;
+    top: 20px;
+    right: -100%;
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    color:  white;
+    transition: all 0.5s;
+}
+
+.show{
+    right: 10px;
+}
+
+.error{
+    background-color: rgb(245, 64, 64);
+}
+
+.sucess{
+    background-color: rgb(51 165 51)
+}
+.alert svg {
+    padding-right: 10px;
+    width: 1rem;
+}
+
+.message{
+    max-width: 500px;
+    line-break: normal;
+    
+}
+
+.message p{
+    margin: 0;   
+    display: block;
+    word-wrap: break-word;
+}
+
+@media (max-width: 425px) {
+    .alert{
+        right: -200%;
+    }
+
+    .show{
+        right: 10px;
+    }
+}
